@@ -1,0 +1,14 @@
+body {
+    background-color: whitesmoke;
+}
+button {
+    padding: 10px;
+    background-color: rgb(3, 78, 97);
+    color: whitesmoke;
+    text-align: left;
+}
+button:hover {
+    background-color: aliceblue;
+    color: rgb(3, 78, 97);
+    cursor: pointer;
+}

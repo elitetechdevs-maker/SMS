@@ -1,0 +1,3021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
+    <link rel="stylesheet" href="teacher.css">
+    <link rel="stylesheet" href="bursar.css">
+    <title>SMS | Teacher's Portal</title>
+</head>
+<body>
+    <div class="loader">
+        <div class="load">
+            <h1>Loading...</h1>
+        </div>
+    </div>
+    
+    <main>
+        
+        <section class="sidebar">
+            <div class="first">
+                <div id="img">
+                    <img src="icons/badge.png" alt="" id="sideBarSchBadge">
+                </div>
+                <div id="schname">
+                    <h2 id="sideBarSchoolName">School Management System</h2>
+                </div>
+            </div>
+            <div class="second">
+                <div class="dashboard second_div">
+                    <button class="drop_down_btn" id="Dashboard">
+                        <img src="assets/icons/dashboard_light.png" class="dashboard_icon side_navbar_icon"> Dashboard
+                    </button>
+                </div>
+                <div class="students second_div" style="display: none;">
+                    <button class="drop_down_btn" id="Students">
+                        <img src="assets/icons/student_light.png" alt="" class="student_icon side_navbar_icon"> Students
+                    </button>
+                    <div class="dashClasses dashMen" id="drop_down_menue">
+                        <button onclick="s1StudentsManageBtn()">Senior 1</button>
+                        <button onclick="s2StudentsManageBtn()">Senior 2</button>
+                        <button onclick="s3StudentsManageBtn()">Senior 3</button>
+                        <button onclick="s4StudentsManageBtn()">Senior 4</button>
+                        <button onclick="s5StudentsManageBtn()">Senior 5</button>
+                        <button onclick="s6StudentsManageBtn()">Senior 6</button>
+                    </div>
+                </div>
+                <div class="teachers second_div" style="display: none;">
+                    <button class="drop_down_btn" id="Teachers">
+                        <img src="assets/icons/teacher_light.png" class="teacher_icon side_navbar_icon"> Teachers
+                    </button>
+                    <div class="dashTeachers dashMen" id="drop_down_menue">
+                        <button onclick="teachersManageBtn()">Manage Teachers</button>
+                        <button onclick="teachersAddBtn()">Add Teachers</button>
+                        <button onclick="teachersClassBtn()">Class Teachers</button>
+                        <button onclick="teachersAuthoritiesBtn()">Authorities</button>
+                        <button onclick="teachersAttendanceBtn()">Attendence</button>
+                    </div>
+                </div>
+                <div class="fees second_div">
+                    <button class="drop_down_btn" id="Fees">
+                        <img src="assets/icons/fees_light.png" class="fees_icon side_navbar_icon"> Fees Collection
+                    </button>
+                    <div class="dashClasses dashMen" id="drop_down_menue">
+                        <button onclick="s1StudentsFeesManageBtn()">Senior 1</button>
+                        <button onclick="s2StudentsFeesManageBtn()">Senior 2</button>
+                        <button onclick="s3StudentsFeesManageBtn()">Senior 3</button>
+                        <button onclick="s4StudentsFeesManageBtn()">Senior 4</button>
+                        <button onclick="s5StudentsFeesManageBtn()">Senior 5</button>
+                        <button onclick="s6StudentsFeesManageBtn()">Senior 6</button>
+                    </div>
+                </div>
+                <div class="Attendance second_div">
+                    <button class="drop_down_btn" id="Attendance">
+                        <img src="assets/icons/attend_light.png" class="attendence_icon side_navbar_icon"> Attendance
+                    </button>
+                    <div class="dashAttendance dashMen" id="drop_down_menue">
+                        <button onclick="studentsAttendanceBtn()">Students</button>
+                        <button onclick="teachersAttendanceBtn()">Teachers</button>
+                    </div>
+                </div>
+                <div class="marks second_div" style="display: none;">
+                    <button class="drop_down_btn" id="Marks">
+                        <img src="assets/icons/marks_light.png" class="marks_icon side_navbar_icon"> Marks
+                    </button>
+                    <div class="dashMarks dashMen" id="drop_down_menue">
+                        <button onclick="s1MarksBtn()">Senior 1</button>
+                        <button onclick="s2MarksBtn()">Senior 2</button>
+                        <button onclick="s3MarksBtn()">Senior 3</button>
+                        <button onclick="s4MarksBtn()">Senior 4</button>
+                        <button onclick="s5MarksBtn()">Senior 5</button>
+                        <button onclick="s6MarksBtn()">Senior 6</button>
+                    </div>
+                </div>
+                <div class="grades second_div" style="display: none;">
+                    <button class="drop_down_btn" id="Grades">
+                        <img src="assets/icons/grades_light.png" class="grades_icon side_navbar_icon"> Grades
+                    </button>
+                    <div class="dashGrades dashMen" id="drop_down_menue">
+                        <button onclick="s1GradesBtn()">Senior 1</button>
+                        <button onclick="s2GradesBtn()">Senior 2</button>
+                        <button onclick="s3GradesBtn()">Senior 3</button>
+                        <button onclick="s4GradesBtn()">Senior 4</button>
+                        <button onclick="s5GradesBtn()">Senior 5</button>
+                        <button onclick="s6GradesBtn()">Senior 6</button>
+                    </div>
+                </div>
+                <div class="communication second_div">
+                    <button class="drop_down_btn" id="Communication">
+                        <img src="assets/icons/communication_light.png" class="communication_icon side_navbar_icon"> Communication
+                    </button>
+                    <div class="dashCommunication dashMen" id="drop_down_menue">
+                        <button onclick="schEventsBtn()">Events</button>
+                        <button onclick="schFinanceBtn()">Finance</button>
+                        <button onclick="s3GradesBtn()">Senior 3</button>
+                        <button onclick="s4GradesBtn()">Senior 4</button>
+                        <button onclick="s5GradesBtn()">Senior 5</button>
+                        <button onclick="s6GradesBtn()">Senior 6</button>
+                    </div>
+                </div>
+                <div class="reports second_div" style="display:none;">
+                    <button class="drop_down_btn" id="Reports">
+                        <img src="assets/icons/reports_light.png" class="reports_icon side_navbar_icon"> Reports
+                    </button>
+                    <div class="dashReports dashMen" id="drop_down_menue">
+                        <button onclick="s1ReportsBtn()">Senior 1</button>
+                        <button onclick="s2ReportsBtn()">Senior 2</button>
+                        <button onclick="s3ReportsBtn()">Senior 3</button>
+                        <button onclick="s4ReportsBtn()">Senior 4</button>
+                        <button onclick="s5ReportsBtn()">Senior 5</button>
+                        <button onclick="s6ReportsBtn()">Senior 6</button>
+                    </div>
+                </div>
+                <div class="settings second_div" style="display: none;">
+                    <button class="drop_down_btn" id="Settings">
+                        <img src="assets/icons/setting_light.png" class="settings_icon side_navbar_icon"> Settings
+                    </button>
+                    <div class="dashSettings dashMen" id="drop_down_menue">
+                        <button onclick="dbSettingsBtn()">DB Settings</button>
+                        <button onclick="s2ReportsBtn()">Others 2</button>
+                        <button onclick="s3ReportsBtn()">oThers 3</button>
+                        <button onclick="s4ReportsBtn()">Others 4</button>
+                        <button onclick="s5ReportsBtn()">Others 5</button>
+                        <button onclick="s6ReportsBtn()">Others 6</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contentbar">
+            <div class="wrap_contentbar">
+                <div class="card">
+                    <div class="dashboard_card head_for_all_cards" id="layout_card">
+                        <div class="headers">
+                            <div class="header1">
+                                <h1 class="headTxt">Dashboard</h1>
+                            </div>
+                            <div class="header2">
+                                <div class="dashSearch">
+                                    <p>
+                                        <input type="text" id="" placeholder="Search here...">
+                                    </p>
+                                </div>
+                                <div id="user">
+                                    <div id="user_img">
+                                        <img src="assets/icons/user_dark.png" id="loggeIn_user_img">
+                                    </div>
+                                    <div id="user_name">
+                                        <span id="loggeIn_user_name">Admin Doe</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button onclick="teacherLogOutBtn()" id="teacher_logOut_btn">Log Out</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="summery">
+                            <div class="sumery_cards">
+                                <div class="sumery_card" id="sumery_card_1">
+                                    <p id="card_icon">
+                                        <img src="assets/icons/m_students_light.png" alt="">
+                                    </p>
+                                    <p id="card_number">
+                                        <span id="total_no_stds">0</span><b>+</b>
+                                    </p>
+                                    <p id="card_name">
+                                        Students
+                                    </p>
+                                </div>
+                                <div class="sumery_card" id="sumery_card_2">
+                                    <p id="card_icon">
+                                        <img src="assets/icons/m_teachers_light.png" alt="">
+                                    </p>
+                                    
+                                    <p id="card_number">
+                                        <span id="total_no_teachers">0</span><b>+</b>
+                                    </p>
+                                    <p id="card_name">
+                                        Teachers
+                                    </p>
+                                </div>
+                                <div class="sumery_card" id="sumery_card_3">
+                                    <p id="card_icon">
+                                        <img src="assets/icons/attend_light.png" alt="">
+                                    </p>
+                                    <p id="card_number">
+                                        96%
+                                    </p>
+                                    <p id="card_name">
+                                        Attendance
+                                    </p>
+                                </div>
+                                <div class="sumery_card" id="sumery_card_4">
+                                    <p id="card_icon">
+                                        <img src="assets/icons/avg_grade_light.png" alt="">
+                                    </p>
+                                    <p id="card_number">
+                                        3.85
+                                    </p>
+                                    <p id="card_name">
+                                        Average Grade
+                                    </p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="graphs_data">
+                            <div class="graph_data_dv1 graph_data_dv">
+                                <div class="chart">
+                                    <canvas id="bar_chart_1" class="chart"></canvas>
+                                </div>
+                                <div class="data_labels">
+                                    <div class="data_div">
+                                        <span id="label_name">Male Teachers</span>
+                                        <span id="no_MTeachers" class="label_value">0</span>
+                                    </div>
+                                    <div class="data_div">
+                                        <span id="label_name">Female Teachers</span>
+                                        <span id="no_FTeachers" class="label_value">0</span>
+                                    </div>
+                                    <div class="data_div">
+                                        <span id="label_name">Male Students</span>
+                                        <span id="no_MStudents" class="label_value">0</span>
+                                    </div>
+                                    <div class="data_div">
+                                        <span id="label_name">Female Students</span>
+                                        <span id="no_FStudents" class="label_value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="graph_data_dv2 graph_data_dv">   
+                                <div class="first_graph_data">
+                                    <div class="fees_data_labels">
+                                        <div class="data_div">
+                                            <span id="label_name">Cleared</span>
+                                            <span id="no_cleared" class="label_value">0</span>
+                                        </div>
+                                        <div class="data_div">
+                                            <span id="label_name">Money In Wallet</span>
+                                            <span id="no_wallet_blc" class="label_value">0</span>
+                                        </div>
+                                        <div class="data_div">
+                                            <span id="label_name">Defaulters</span>
+                                            <span id="no_defaulters" class="label_value">0</span>
+                                        </div>
+                                        <div class="data_div">
+                                            <span id="label_name">On Busary</span>
+                                            <span id="no_on_bursary" class="label_value">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="new_event_div">
+                                        <div class="bar1 bar">
+                                    <div class="bar_firsrt">
+                                        <div class="div_1">
+                                            <div class="event_title">
+                                                <h2>Event Titale</h2>
+                                            </div>
+                                            <div class="event_indicator">
+                                                <span>Status</span>
+                                                <span><button>View</button></span>
+                                            </div>
+                                        </div>
+                                        <div class="div_2">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                                                Maecenas porttitor congue massa. Fusce posuere, 
+                                                magna sed pulvinar ultricies, purus lectus malesuada libero, 
+                                                sit amet commodo magna eros quis urna.
+                                                Pellentesque habitant morbi tristique senectus et netus et 
+                                                malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+                                            </p>
+                                        </div>
+                                        <div class="div_3">
+                                            <span>Created on: 10/02/2026</span>
+                                            <span>Do Date: 10/02/2026</span>
+                                        </div>
+                                    </div>
+                                    <div class="bar_second">
+                                        <span onclick="editEventsBtn()"><img src="assets/icons/edit_loght.png" alt=""></span>
+                                        <span onclick="deleteEventsBtn()"><img src="assets/icons/delete_light.png" alt=""></span>
+                                        <span><label><input type="checkbox"></label></span>
+                                    </div>
+                                </div>
+                                    </div>
+                                </div>
+                                <div class="second_graph_data">
+                                    <div class="chart_2">
+                                        <canvas id="bar_chart_2" class="chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="teachers_card head_for_all_cards" id="layout_card">
+                        <div class="headers">
+                            <div class="header1">
+                                <h3 class="headTxt_other" id="teachersIdentifier">Teachers' Details</h3>
+                            </div>
+                            <div class="header2">
+                                <div class="studentSearch">
+                                    <p>
+                                        <span > Year: <span>2025</span></span>
+                                    </p>
+                                </div>
+                                <div id="user">
+                                    <div id="user_img">
+                                        <img src="assets/icons/user_dark.png" id="loggeIn_user_img">
+                                    </div>
+                                    <div id="user_name">
+                                        <span id="loggeIn_user_name">Admin</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button onclick="teacherLogOutBtn()" id="teacher_logOut_btn">Log Out</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navigation">
+                            <div class="nav1">
+                                <div class="select_year">
+                                    <select name="" id="teachersNavSelectYear">
+                                        
+                                    </select>
+                                </div>
+                                <div class="sort">
+                                    <select name="" id="sortTeachersBy">
+                                        <option value="">Sort</option>
+                                        <option value="">Normal</option>
+                                        <option value="name_a_z">Name A-Z</option>
+                                        <option value="name_z_a">Name Z-A</option>
+                                        <option value="gender_m">Gender M</option>
+                                        <option value="gender_f">Gender F</option>
+                                        <option value="work_time">Work Time</option>
+                                    </select>
+                                </div>
+                                <div class="db">
+                                    <button onclick="getTeachersDataBtn()">Get Teachers</button>
+                                </div>
+                            </div>
+                            <div class="nav2">
+                                <div class="search">
+                                    <input type="text" placeholder="Search here..." id="searchForTeacher">
+                                </div>
+                                <div class="db">
+                                    <button onclick="addTeacherBtn()">Add Teacher</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="table">
+                            <table border>
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Photo</th>
+                                        <th>TID</th>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>D.O.B</th>
+                                        <th>Nationality</th>
+                                        <th>District</th>
+                                        <th>Sub-County</th>
+                                        <th>Qualification</th>
+                                        <th>Emp. Type</th>
+                                        <th>Action Btn</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="teachersDataTbdy">
+                                    <tr>
+                                        <td>2</td>
+                                        <td>ST02</td>
+                                        <td>Hoogy H</td>
+                                        <td>F</td>
+                                        <td>1</td>
+                                        <td>2021</td>
+                                        <td>14-06-2005</td>
+                                        <td>Mery Doe</td>
+                                        <td>+256789564334</td>
+                                        <td>Katikamu SDA</td>
+                                        <td>False</td>
+                                        <td>Ugandan</td>
+                                        <td>Luweero</td>
+                                        <td>
+                                            <button>View</button>
+                                            <button>Edit</button>
+                                            <button>Del</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>ST01</td>
+                                        <td>John Doe D</td>
+                                        <td>M</td>
+                                        <td>1</td>
+                                        <td>2020</td>
+                                        <td>14-06-2005</td>
+                                        <td>Mery Doe</td>
+                                        <td>+256789564334</td>
+                                        <td>Katikamu SDA</td>
+                                        <td>True</td>
+                                        <td>Ugandan</td>
+                                        <td>Luweero</td>
+                                        <td>
+                                            <button>View</button>
+                                            <button>Edit</button>
+                                            <button>Del</button>
+                                        </td>
+                                    </tr>
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="students_card head_for_all_cards" id="layout_card">
+                        <div class="headers">
+                            <div class="header1">
+                                <h3 class="headTxt_other">Students</h3>&nbsp;&nbsp; - &nbsp;&nbsp;
+                                <h3 id="classIdentifier"></h3>
+                            </div>
+                            <div class="header2">
+                                <div class="studentSearch">
+                                    <p>
+                                        <span > Year: <span id="stdManagementYearIdentifier"></span></span>
+                                    </p>
+                                </div>
+                                <div id="user">
+                                    <div id="user_img">
+                                        <img src="assets/icons/user_dark.png" id="loggeIn_user_img">
+                                    </div>
+                                    <div id="user_name">
+                                        <span id="loggeIn_user_name">John Doe</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button onclick="teacherLogOutBtn()" id="teacher_logOut_btn">Log Out</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navigation">
+                            <div class="nav1">
+                                <div class="select_year">
+                                    <select name="" id="stdNavSelectYear">
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                    </select>
+                                </div>
+                                <div class="sort">
+                                    <select name="" id="sortAdminStdsBy">
+                                        <option value="">Sort</option>
+                                        <option value="">Normal</option>
+                                        <option value="name_a_z">Name [A-Z]</option>
+                                        <option value="name_z_a">Name [Z-A]</option>
+                                        <option value="gender_m">Gender-M</option>
+                                        <option value="gender_f">Gender-F</option>
+                                        <option value="bursary">Busary</option>
+                                    </select>
+                                </div>
+                                <div class="db">
+                                    <button onclick="getAdminSTdsBtn()">Get Students</button>
+                                </div>
+                            </div>
+                            <div class="nav2">
+                                <div class="search">
+                                    <input type="text" placeholder="Search here..." id="searchForAdminStd">
+                                </div>
+                                <div class="db">
+                                    <button onclick="addStudentBtn()">Add Student</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="table">
+                            <table border id="">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Photo</th>
+                                        <th>STID</th>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>Class</th>
+                                        <th>D.O.B</th>
+                                        <th>Adm Date</th>
+                                        <th>Adm Class</th>
+                                        <th>Busary</th>
+                                        <th>Former Sch</th>
+                                        <th>S-County</th>
+                                        <th>Parent's Name</th>
+                                        <th>Action Btn</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminStdTableBdy">
+                                    <tr>
+                                        <td>2</td>
+                                        <td>ST02</td>
+                                        <td>Hoogy H</td>
+                                        <td>F</td>
+                                        <td>1</td>
+                                        <td>2021</td>
+                                        <td>14-06-2005</td>
+                                        <td>Mery Doe</td>
+                                        <td>+256789564334</td>
+                                        <td>Katikamu SDA</td>
+                                        <td>False</td>
+                                        <td>Ugandan</td>
+                                        <td>Luweero</td>
+                                        <td>
+                                            <button>View</button>
+                                            <button>Edit</button>
+                                            <button>Del</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>ST01</td>
+                                        <td>John Doe D</td>
+                                        <td>M</td>
+                                        <td>1</td>
+                                        <td>2020</td>
+                                        <td>14-06-2005</td>
+                                        <td>Mery Doe</td>
+                                        <td>+256789564334</td>
+                                        <td>Katikamu SDA</td>
+                                        <td>True</td>
+                                        <td>Ugandan</td>
+                                        <td>Luweero</td>
+                                        <td>
+                                            <button>View</button>
+                                            <button>Edit</button>
+                                            <button>Del</button>
+                                        </td>
+                                    </tr>
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="fees_card head_for_all_cards" id="layout_card">
+                        <div class="headers">
+                            <div class="header1">
+                                <h3 class="headTxt_other">Fees Collection</h3> &nbsp;&nbsp; - &nbsp;&nbsp;
+                                <h3 id="feesClassIdentifier"></h3>
+                            </div>
+                            <div class="header2">
+                                <div class="studentSearch">
+                                    <p>
+                                        <span > Year: <span id="feesYearIdentifier"></span></span>
+                                        <span > Term: <span id="feesTermIdentifier"></span></span>
+                                    </p>
+                                </div>
+                                <div id="user">
+                                    <div id="user_img">
+                                        <img src="assets/icons/user_dark.png" id="loggeIn_user_img">
+                                    </div>
+                                    <div id="user_name">
+                                        <span id="loggeIn_user_name">Admin</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button onclick="teacherLogOutBtn()" id="teacher_logOut_btn">Log Out</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navigation">
+                            <div class="nav1">
+                                <div class="select_year">
+                                    <select name="" id="stdNavselectstdFeesYear">
+                                        
+                                    </select>
+                                </div>
+                                <div class="select_year">
+                                    <select name="" id="stdNavselectstdFeesTerm">
+                                        <option value="1">Term 1</option>
+                                        <option value="2">Term 2</option>
+                                        <option value="3">Term 3</option>
+                                    </select>
+                                </div>
+                                <div class="sort">
+                                    <select name="" id="sortFeesBy">
+                                        <option value="">Sort</option>
+                                        <option value="name_a_z">Name [A-Z]</option>
+                                        <option value="name_z_a">Name [Z-A]</option>
+                                        <option value="gender_m">Gender M</option>
+                                        <option value="gender_f">Gender F</option>
+                                        <option value="bursary">bursary</option>
+                                        <option value="amount_paid_a">Paid Ace</option>
+                                        <option value="amount_paid_d">Paid Dec</option>
+                                        <option value="blc_a">Balance Ace</option>
+                                        <option value="blc_d">Balance Dec</option>
+                                        <option value="acc_blc">Account</option>
+                                        <option value="pay_status">Status</option>
+                                    </select>
+                                </div>
+                                <div class="db">
+                                    <button onclick="getAdminSTdsFeesBtn()">Get Fees</button>
+                                </div>
+                            </div>
+                            <div class="nav2">
+                                <div class="search">
+                                    <input type="text" placeholder="Search here..." id="searchForAdminStdFess">
+                                </div>
+                                <div class="db">
+                                    <button onclick="addStudentBtn()" disabled>Add Student</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="table">
+                            <table border id="">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Photo</th>
+                                        <th>STID</th>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>Princple</th>
+                                        <th>Amount Paid</th>
+                                        <th>Balance</th>
+                                        <th>Payed Percent</th>
+                                        <th>Blc Percent</th>
+                                        <th>Pay Date</th>
+                                        <th>Pay Status</th>
+                                        <th>Account Bcl</th>
+                                        <th>On Busary</th>
+                                        <th>Parent Name</th>
+                                        <th>Action Btn</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminStdFeesTableBdy">
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td>ST02</td>
+                                        <td>Hoogy H</td>
+                                        <td>F</td>
+                                        <td>1</td>
+                                        <td>2021</td>
+                                        <td>14-06-2005</td>
+                                        <td>Mery Doe</td>
+                                        <td>+256789564334</td>
+                                        <td>Katikamu SDA</td>
+                                        <td>False</td>
+                                        <td>Ugandan</td>
+                                        <td>Ugandan</td>
+                                        <td>Luweero</td>
+                                        <td>
+                                            <button>View</button>
+                                            <button>Edit</button>
+                                            <button>Del</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>ST01</td>
+                                        <td>John Doe D</td>
+                                        <td>M</td>
+                                        <td>1</td>
+                                        <td>2020</td>
+                                        <td>14-06-2005</td>
+                                        <td>Mery Doe</td>
+                                        <td>+256789564334</td>
+                                        <td>Katikamu SDA</td>
+                                        <td>True</td>
+                                        <td>Ugandan</td>
+                                        <td></td>
+                                        <td>Luweero</td>
+                                        <td>
+                                            <button>View</button>
+                                            <button>Edit</button>
+                                            <button>Del</button>
+                                        </td>
+                                    </tr>
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="marks_card head_for_all_cards" id="layout_card">
+                        <div class="headers">
+                            <div class="header1">
+                                <h3 class="headTxt_other">Performance</h3> &nbsp;&nbsp; - &nbsp;&nbsp;
+                                <h3 id="stdMarksClassIdentifier">Senior 1</h3>
+                            </div>
+                            <div class="header2">
+                                <div class="studentSearch">
+                                    <p>
+                                        <span > Year: <span>2025</span></span>
+                                        <br>
+                                        <span > Term: <span>I</span></span>
+                                        <br>
+                                        <span > Exam: <span>B.O.T</span></span>
+                                    </p>
+                                </div>
+                                <div id="user">
+                                    <div id="user_img">
+                                        <img src="assets/icons/user_dark.png" id="loggeIn_user_img">
+                                    </div>
+                                    <div id="user_name">
+                                        <span id="loggeIn_user_name">Admin</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button onclick="teacherLogOutBtn()" id="teacher_logOut_btn">Log Out</button>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="navigation">
+                            <div class="nav1">
+                                <div class="select_year">
+                                    <select name="" id="stdNavselectstdMarksYear">
+                                        
+                                    </select>
+                                </div>
+                                <div class="select_term">
+                                    <select name="" id="stdNavselectstdMarksTerm">
+                                        <option value="1">Term 1</option>
+                                        <option value="2">Term 2</option>
+                                        <option value="3">Term 3</option>
+                                    </select>
+                                </div>
+                                <div class="select_exam">
+                                    <select name="" id="stdNavselectstdMarksExam">
+                                        <option value="bot">B.O.T</option>
+                                        <option value="mot">M.O.T</option>
+                                        <option value="eot">E.O.T</option>
+                                    </select>
+                                </div>
+                                <div class="sort">
+                                    <select name="" id="sortMaksBy">
+                                        <option value="">Sort</option>
+                                        <option value="">Normal </option>
+                                        <option value="name_a_z">Name </option>
+                                        <option value="phy">Physics</option>
+                                        <option value="chem">Chemistry</option>
+                                        <option value="maths">Maths</option>
+                                        <option value="bio">Bio</option>
+                                        <option value="geog">Geography</option>
+                                        <option value="his">History</option>
+                                        <option value="eng">English</option>
+                                        <option value="ict">ICT</option>
+                                        <option value="ent">Ent</option>
+                                        <option value="agric">Agriculture</option>
+                                        <option value="art">Art</option>
+                                        <option value="td">T.Drawing</option>
+                                        <option value="lit">Literrature</option>
+                                        <option value="pe">P.E</option>
+                                        <option value="cre">C.R.E</option>
+                                        <option value="ire">I.R.E</option>
+                                        <option value="lug">Luganda</option>
+                                        <option value="kis">Kiswahili</option>
+                                    </select>
+                                </div>
+                                <div class="db">
+                                    <button onclick="readAdminStdsMarksBtn()">Get Marks</button>
+                                </div>
+                            </div>
+                            <div class="nav2">
+                                <div class="search">
+                                    <input type="text" placeholder="Search here..." id="searchForAdminStdMarks">
+                                </div>
+                                <div class="db">
+                                    <button onclick="addStudentMarksBtn()">Add Student</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="table">
+                            <table border>
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Photo</th> 
+                                        <th>STID</th>
+                                        <th>Name</th>
+                                        <th>Class</th>
+                                        <th>Phy</th>
+                                        <th>Chem</th>
+                                        <th>Maths</th>
+                                        <th>Bio</th>
+                                        <th>GEOG</th>
+                                        <th>His</th>
+                                        <th>Eng</th>
+                                        <th>ICT</th>
+                                        <th>ENT</th>
+                                        <th>AGRIC</th>
+                                        <th>Art</th>
+                                        <th>T.D</th>
+                                        <th>Lit</th>
+                                        <th>P.E</th>
+                                        <th>C.R.E</th>
+                                        <th>I.R.E</th>
+                                        <th>Lug</th>
+                                        <th>Kis</th>
+                                        <th>Action BTN</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminStdMarksTbdy">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>ST01</td>
+                                        <td>John Doe</td>
+                                        <td>96</td>
+                                        <td>87</td>
+                                        <td>90</td>
+                                        <td>85</td>
+                                        <td>54</td>
+                                        <td>89</td>
+                                        <td>63</td>
+                                        <td>90</td>
+                                        <td>56</td>
+                                        <td>90</td>
+                                        <td>57</td>
+                                        <td>75</td>
+                                        <td>49</td>
+                                        <td>93</td>
+                                        <td>78</td>
+                                        <td>65</td>
+                                        <td>75</td>
+                                        <td>59</td>
+                                        <td>
+                                            <button>View</button>
+                                            <button>Edit</button>
+                                            <button>Del</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>ST02</td>
+                                        <td>Hoogy H</td>
+                                        <td>96</td>
+                                        <td>87</td>
+                                        <td>90</td>
+                                        <td>85</td>
+                                        <td>54</td>
+                                        <td>89</td>
+                                        <td>63</td>
+                                        <td>90</td>
+                                        <td>56</td>
+                                        <td>90</td>
+                                        <td>57</td>
+                                        <td>75</td>
+                                        <td>49</td>
+                                        <td>93</td>
+                                        <td>78</td>
+                                        <td>65</td>
+                                        <td>75</td>
+                                        <td>59</td>
+                                        <td>
+                                            <button>View</button>
+                                            <button>Edit</button>
+                                            <button>Del</button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="grades_card " id="layout_card">
+                        <div class="headers">
+                            <div class="header1">
+                                <h3 class="headTxt_other">Reports</h3>&nbsp;&nbsp; - &nbsp;&nbsp;
+                                <h3 id="stdGradesClassIdentifier">Senior 1</h3>
+                            </div>
+                            <div class="header2">
+                                <div class="studentSearch">
+                                    <p>
+                                        <span > Year: <span>2025</span></span>
+                                        <br>
+                                        <span > Term: <span>I</span></span>
+                                        <br>
+                                        <span > Exam: <span>B.O.T</span></span>
+                                    </p>
+                                </div>
+                                <div id="user">
+                                    <div id="user_img">
+                                        <img src="assets/icons/user_dark.png" id="loggeIn_user_img">
+                                    </div>
+                                    <div id="user_name">
+                                        <span id="loggeIn_user_name">Admin</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button onclick="teacherLogOutBtn()" id="teacher_logOut_btn">Log Out</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navigation">
+                            <div class="nav1">
+                                <div class="select_year">
+                                    <select name="" id="stdNavGradesSelectYear">
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                    </select>
+                                </div>
+                                <div class="select_term">
+                                    <select name="" id="stdNavGradesSelectTerm">
+                                        <option value="">Term</option>
+                                        <option value="1">Term 1</option>
+                                        <option value="2">Term 2</option>
+                                        <option value="3">Term 3</option>
+                                    </select>
+                                </div>
+                                <div class="select_exam">
+                                    <select name="" id="stdNavGradesSelectExam">
+                                        <option value="">Exam</option>
+                                        <option value="bot">B.O.T</option>
+                                        <option value="mot">M.O.T</option>
+                                        <option value="eot">E.O.T</option>
+                                    </select>
+                                </div>
+                                <div class="db">
+                                    <button onclick="getGradesBTN()">Get Grades</button>
+                                </div>
+                            </div>
+                            <div class="nav2">
+                                <div class="search">
+                                    <input type="text" placeholder="Search here...">
+                                </div>
+                                <div class="print_btn">
+                                    <button onclick="printGradesReportBtn()">Print Reports</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="reports_window" id="printArea_1">
+                            <div class="reports reportDiv">
+                                <div class="report_card">
+                                    <div class="card_head">
+                                        <div class="badge">
+                                            <img src="icons/badge.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <p id="sch_name">
+                                                ST JOHN DOE SENIOR SECONDARY SCHOOL
+                                                KAKOOGE
+                                            </p>
+                                            <p id="address">
+                                                <span>P.O BOX 53,WOBULENZI, UGANDA</span>
+                                                <span>Tel: 0765440620/ 0756059212</span>
+                                                <span>Email: katikamusdasskakooge@gmail.com</span>
+                                                <span id="sch_motor">"FEAR GOD AND STRIVE"</span>
+                                            </p>
+                                            <p id="level">
+                                                O LEVEL ASSESSMENT REPORT, 2025
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card_intro">
+                                        <div class="first">
+                                            <p>NAME: <span>John DOe</span></p>
+                                            <p>TERM: <span>1</span></p>
+                                            <p>SCHOOL PAY CODE: <span>100024004</span></p>
+                                        </div>
+                                        <div class="second">
+                                            <p>GENER: <span>MALE</span></p>
+                                            <p>CLASS/STREAM: <span>S.1 EAST</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="bdy">
+                                        <div class="intro">
+                                            <h3>PERFORMANCE RECORDS</h3>
+                                        </div>
+                                        <div class="table">
+                                            <table border>
+                                                <thead>
+                                                    <tr>
+                                                        <th>SUBJECT</th>
+                                                        <th>BOT/30</th>
+                                                        <th>CA/10</th>
+                                                        <th>EOT/60</th>
+                                                        <th>100%</th>
+                                                        <th>TOT/3</th>
+                                                        <th>GRADE</th>
+                                                        <th>REMARK</th>
+                                                        <th>TEACHER</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>English Language</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mathematics</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Physics</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Chemistry</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Biology</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Geography</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>History & Political Education</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Kiswahili</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Physical Education</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Entreprenuership</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>C.R.E</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Agriculture</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="bdy_2">
+                                        <div class="table_1">
+                                            <table border>
+                                                <thead>
+                                                    <tr id="head_row">
+                                                        <th colspan="4">KEYWORDS AND DEFINITION OF TERMS</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>IDENTIFIER</th>
+                                                        <th>SCORE</th>
+                                                        <th> DESCRIPTOR</th>
+                                                        <th> SCORE RANGE</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>OUTSTANDING</td>
+                                                        <td>Most or all outcomes achieved for overall achievement.</td>
+                                                        <td> 2.5 - 3.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>MODORATE</td>
+                                                        <td>Many learning outcomes achieved, enough for overall achievements.</td>
+                                                        <td>  1.5 - 2.49</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>BASIC</td>
+                                                        <td>
+                                                            Few learning outcomes achieved,
+                                                            but not sufficient for overall achievement.    
+                                                        </td>
+                                                        <td>  0.1 - 1.49</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="table_2">
+                                            <table border>
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="2">GRADE AND IDENTIFIER</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>GRADE</th>
+                                                        <th>IDENTIFIER</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>A (85-100)</td>
+                                                        <td> Exceptional</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>B (70-84)</td>
+                                                        <td> Outstanding</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>C (60-69)</td>
+                                                        <td> Satisfactory</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>D (40-59)</td>
+                                                        <td> Basic</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>E (0-39)</td>
+                                                        <td> Elementary</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="bdy_3">
+                                        <div class="comments">
+                                            <div class="teachers_comment">
+                                                <p>
+                                                    Class teacher comments: 
+                                                    <span>
+                                                        You will get better grades if you improve on your weak areas.
+                                                    </span>
+                                                </p>
+                                                <p>Signature: <span></span></p>
+                                            </div>
+                                            <div class="head_comment">
+                                                <p>
+                                                    Head teacher comments: 
+                                                    <span>
+                                                        Your strengths are evident, and with focus on improving in weaker 
+                                                        areas, you have the potential to achieve even better grades.
+                                                    </span>
+                                                </p>
+                                                <p>Signature: <span></span></p>
+                                            </div>
+                                        </div>
+                                        <div class="bdy_3_footer">
+                                            <p>This term has ended on: <span> 26/11/2025</span></p>
+                                            <p> Next term begins on: <span> 25/01/2026</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reports_pop_up reports_window">
+                            <div class="headSec">
+                                <p id="p1">Print All Reports</p>
+                                <p>
+                                <p id="p2">
+                                    <span id="numberReports"></span>
+                                    <img src="assets/icons/printer_dark.png" alt="" onclick="printGradesReportsIcon()"> 
+                                </p>
+                                <p id="p3">
+                                    <img src="assets/icons/close_1.png" alt="" onclick="closeGradesReportPopUp()">
+                                </p>
+                            </div>
+                            <div class="reports reportDiv_popUp">
+                                <div class="report_card">
+                                    <div class="card_head">
+                                        <div class="badge">
+                                            <img src="icons/badge.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <p id="sch_name">
+                                                ST JOHN DOE SENIOR SECONDARY SCHOOL
+                                                KAKOOGE
+                                            </p>
+                                            <p id="address">
+                                                <span>P.O BOX 53,WOBULENZI, UGANDA</span>
+                                                <span>Tel: 0765440620/ 0756059212</span>
+                                                <span>Email: katikamusdasskakooge@gmail.com</span>
+                                                <span id="sch_motor">"FEAR GOD AND STRIVE"</span>
+                                            </p>
+                                            <p id="level">
+                                                O LEVEL ASSESSMENT REPORT, 2025
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="card_intro">
+                                        <div class="first">
+                                            <p>NAME: <span>John DOe</span></p>
+                                            <p>TERM: <span>1</span></p>
+                                            <p>SCHOOL PAY CODE: <span>100024004</span></p>
+                                        </div>
+                                        <div class="second">
+                                            <p>GENER: <span>MALE</span></p>
+                                            <p>CLASS/STREAM: <span>S.1 EAST</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="bdy">
+                                        <div class="intro">
+                                            <h3>PERFORMANCE RECORDS</h3>
+                                        </div>
+                                        <div class="table">
+                                            <table border>
+                                                <thead>
+                                                    <tr>
+                                                        <th>SUBJECT</th>
+                                                        <th>BOT/30</th>
+                                                        <th>CA/10</th>
+                                                        <th>EOT/60</th>
+                                                        <th>100%</th>
+                                                        <th>TOT/3</th>
+                                                        <th>GRADE</th>
+                                                        <th>REMARK</th>
+                                                        <th>TEACHER</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>English Language</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mathematics</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Physics</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Chemistry</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Biology</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Geography</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>History & Political Education</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Kiswahili</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Physical Education</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Entreprenuership</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>C.R.E</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Agriculture</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="bdy_2">
+                                        <div class="table_1">
+                                            <table border>
+                                                <thead>
+                                                    <tr id="head_row">
+                                                        <th colspan="4">KEYWORDS AND DEFINITION OF TERMS</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>IDENTIFIER</th>
+                                                        <th>SCORE</th>
+                                                        <th> DESCRIPTOR</th>
+                                                        <th> SCORE RANGE</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>OUTSTANDING</td>
+                                                        <td>Most or all outcomes achieved for overall achievement.</td>
+                                                        <td> 2.5 - 3.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>MODORATE</td>
+                                                        <td>Many learning outcomes achieved, enough for overall achievements.</td>
+                                                        <td>  1.5 - 2.49</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>BASIC</td>
+                                                        <td>
+                                                            Few learning outcomes achieved,
+                                                            but not sufficient for overall achievement.    
+                                                        </td>
+                                                        <td>  0.1 - 1.49</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="table_2">
+                                            <table border>
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="2">GRADE AND IDENTIFIER</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>GRADE</th>
+                                                        <th>IDENTIFIER</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>A (85-100)</td>
+                                                        <td> Exceptional</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>B (70-84)</td>
+                                                        <td> Outstanding</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>C (60-69)</td>
+                                                        <td> Satisfactory</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>D (40-59)</td>
+                                                        <td> Basic</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>E (0-39)</td>
+                                                        <td> Elementary</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="bdy_3">
+                                        <div class="comments">
+                                            <div class="teachers_comment">
+                                                <p>
+                                                    Class teacher comments: 
+                                                    <span>
+                                                        You will get better grades if you improve on your weak areas.
+                                                    </span>
+                                                </p>
+                                                <p>Signature: <span></span></p>
+                                            </div>
+                                            <div class="head_comment">
+                                                <p>
+                                                    Head teacher comments: 
+                                                    <span>
+                                                        Your strengths are evident, and with focus on improving in weaker 
+                                                        areas, you have the potential to achieve even better grades.
+                                                    </span>
+                                                </p>
+                                                <p>Signature: <span></span></p>
+                                            </div>
+                                        </div>
+                                        <div class="bdy_3_footer">
+                                            <p>This term has ended on: <span> 26/11/2025</span></p>
+                                            <p> Next term begins on: <span> 25/01/2026</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settings_card head_for_all_cards" id="layout_card">
+                        <div class="headers">
+                            <div class="header1">
+                                <h3 class="headTxt_other">Settings</h3>
+                                <!-- <h3 id="settingsIdentifier">Databases</h3> -->
+                            </div>
+                            <div class="header2">
+                                <!-- <div class="studentSearch">
+                                    <p>
+                                        <span > Year: <span>2025</span></span>
+                                        <br>
+                                        <span > Term: <span>I</span></span>
+                                        <br>
+                                        <span > Exam: <span>B.O.T</span></span>
+                                    </p>
+                                </div> -->
+                                <div id="user">
+                                    <div id="user_img">
+                                        <img src="assets/icons/user_dark.png" id="loggeIn_user_img">
+                                    </div>
+                                    <div id="user_name">
+                                        <span id="loggeIn_user_name">Admin</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button onclick="teacherLogOutBtn()" id="teacher_logOut_btn">Log Out</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navigation">
+                            <div class="nav1">
+                                
+                            </div>
+                            <div class="nav2">
+                                <div class="search">
+                                    <input type="text" placeholder="Search here...">
+                                </div>
+                                <div class="db">
+                                    <button onclick="openCreateDatabaseBtn()">Add Database</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="bars">
+                            <div class="bar1 bar">
+                                <div class="bar_card_1 bar1_card">
+                                    <p class="bar_card_head">School Name</p>
+                                    <p class="bar_card_txt current_sch_name">Change the school name</p>
+                                    <p class="bar_card_button"><button onclick="changeSchoolNameBtn()">Change</button></p>
+                                </div>
+                                <div class="bar_card_2 bar1_card">
+                                    <p class="bar_card_head">School Motor</p>
+                                    <p class="bar_card_txt current_sch_motor">Set the school motor</p>
+                                    <p class="bar_card_button"><button onclick="changeSchoolMotorBtn()">Change</button></p>
+                                </div>
+                                <div class="bar_card_3 bar1_card">
+                                    <p class="bar_card_head">School Badge</p>
+                                    <p class="bar_card_txt"><img src="icons/badge.png" id="sch_badge_settings_pic"></p>
+                                    <p class="bar_card_button"><button onclick="changeSchoolBadgeBtn()">Change</button></p>
+                                </div>
+                                <div class="bar_card_4 bar1_card">
+                                    <p class="bar_card_head">School Fees</p>
+                                    <p class="bar_card_txt">Change school fees for all classes</p>
+                                    <p class="bar_card_button"><button onclick="changeSchoolFeesBtn()">Manage</button></p>
+                                </div>
+                                
+                            </div>
+                            <div class="bar2 bar">
+                                <div class="bar_card_1 bar1_card">
+                                    <p class="bar_card_head">Databases</p>
+                                    <p class="bar_card_txt">Manage all the Datases</p>
+                                    <p class="bar_card_button">
+                                        <button onclick="openCreateDatabaseBtn()">Manage</button>
+                                    </p>
+                                </div>
+                                <div class="bar_card_2 bar1_card">
+                                    <p class="bar_card_head">User Roles</p>
+                                    <p class="bar_card_txt">Assign Roles to staff members</p>
+                                    <p class="bar_card_button"><button>Manage</button></p>
+                                </div>
+                                <div class="bar_card_3 bar1_card">
+                                    <p class="bar_card_head">School Events</p>
+                                    <p class="bar_card_txt">Create and manage all events</p>
+                                    <p class="bar_card_button"><button>Manage</button></p>
+                                </div>
+                                <div class="bar_card_4 bar1_card">
+                                    <p class="bar_card_head">School Fees</p>
+                                    <p class="bar_card_txt">All Classes</p>
+                                    <p class="bar_card_button"><button>Manage</button></p>
+                                </div>
+                                
+                            </div>
+                        
+                    </div>
+                </div>
+                    <div class="communication_card head_for_all_cards" id="layout_card">
+                        <div class="headers">
+                            <div class="header1">
+                                <h3 class="headTxt_other">Events</h3>
+                                <!-- <h3 id="settingsIdentifier">Databases</h3> -->
+                            </div>
+                            <div class="header2">
+                                <div class="studentSearch">
+                                    <p>
+                                        <span > Year: <span>2025</span></span>
+                                        <br>
+                                        <span > Term: <span>I</span></span>
+                                    </p>
+                                </div>
+                                <div id="user">
+                                    <div id="user_img">
+                                        <img src="assets/icons/user_dark.png" id="loggeIn_user_img">
+                                    </div>
+                                    <div id="user_name">
+                                        <span id="loggeIn_user_name">Admin</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button onclick="teacherLogOutBtn()" id="teacher_logOut_btn">Log Out</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navigation">
+                            <div class="nav1">
+                                <select id="selectEventYear">
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                </select>
+                                <select name="" id="selectEventTerm">
+                                    <option value="1">Term 1</option>
+                                    <option value="2">Term 2</option>
+                                    <option value="3">Term 3</option>
+                                </select>
+                                <button onclick="getAllEventsBtn()">Get Events</button>
+                            </div>
+                            <div class="nav2">
+                                <div class="search">
+                                    <input type="text" placeholder="Search here...">
+                                </div>
+                                <div class="db">
+                                    <button onclick="openCreateEventBtn()">Create Event</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="bars" id="eventBars">
+                            <div class="bar1 bar">
+                                <div class="bar_firsrt">
+                                    <div class="div_1">
+                                        <div class="event_title">
+                                            <h2>Event Titale</h2>
+                                        </div>
+                                        <div class="event_indicator">
+                                            <span>Status</span>
+                                            <span><button>View</button></span>
+                                        </div>
+                                    </div>
+                                    <div class="div_2">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                                            Maecenas porttitor congue massa. Fusce posuere, 
+                                            magna sed pulvinar ultricies, purus lectus malesuada libero, 
+                                            sit amet commodo magna eros quis urna.
+                                            Pellentesque habitant morbi tristique senectus et netus et 
+                                            malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+                                        </p>
+                                    </div>
+                                    <div class="div_3">
+                                        <span>Created on: 10/02/2026</span>
+                                        <span>Do Date: 10/02/2026</span>
+                                    </div>
+                                </div>
+                                <div class="bar_second">
+                                    <span onclick="editEventsBtn()"><img src="assets/icons/edit_loght.png" alt=""></span>
+                                    <span onclick="deleteEventsBtn()"><img src="assets/icons/delete_light.png" alt=""></span>
+                                    <span><label><input type="checkbox"></label></span>
+                                </div>
+                            </div>
+                            <div class="bar2 bar">
+                                <div class="bar_firsrt">
+                                    <div class="div_1">
+                                        <div class="event_title">
+                                            <h2>Event Titale</h2>
+                                        </div>
+                                        <div class="event_indicator">
+                                            <span>Status</span>
+                                            <span><button>View</button></span>
+                                        </div>
+                                    </div>
+                                    <div class="div_2">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                                            Maecenas porttitor congue massa. Fusce posuere, 
+                                            magna sed pulvinar ultricies, purus lectus malesuada libero, 
+                                            sit amet commodo magna eros quis urna.
+                                            Pellentesque habitant morbi tristique senectus et netus et 
+                                            malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+                                        </p>
+                                    </div>
+                                    <div class="div_3">
+                                        <span>Created on: 10/02/2026</span>
+                                        <span>Do Date: 10/02/2026</span>
+                                    </div>
+                                </div>
+                                <div class="bar_second">
+                                    <span onclick="editEventsBtn()"><img src="assets/icons/edit_loght.png" alt=""></span>
+                                    <span onclick="deleteEventsBtn()"><img src="assets/icons/delete_light.png" alt=""></span>
+                                    <span><input type="checkbox"></span>
+                                </div>
+                            </div>
+                            
+                        
+                    </div>
+                </div>
+                <div class="warning_msg_pops">
+                <div class="msg_box">
+                    <div class="msg_box_head">
+                        <span id="msgIdentifierTitle">Msg Name</span>
+                        <img src="assets/icons/close_1.png" alt="" id="closeMsgPopIcon">
+                    </div>
+                    <div class="msg_box_bdy">
+                        <div class="msg_icon">
+                            <img src="assets/icons/edit_dark.png" alt="" id="msgIdentifierIcon">
+                        </div>
+                        <div class="msg_desc">
+                            <span  id="msgIdentifierText">Are you sure You want</span>
+                        </div>
+                    </div>
+                    <div class="msg_footer">
+                        <button onclick="msgBoxReturnFalseBtn()">No</button>
+                        <button onclick="msgBoxReturnTrueBtn()">Yes</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+        <div class="login_window">
+    <div class="login_card">
+        <h1>LogIn</h1>
+        <section>
+            <form action="">
+
+                <label>
+                    <span class="user_labels user_name">Username</span>
+                    <input type="email" placeholder="example@gail.com" id="teacher_login_user_name">
+                    <span class="user_input_err_msg error_for_username">The username is not registered contact the admin</span>
+                </label>
+                <label>
+                    <span class="user_labels user_id">Admin ID</span>
+                    <input type="password" placeholder="•••••••••" id="teacher_login_user_id">
+                    <img src="assets/icons/view_lock.png" id="view_password_icon">
+                    <span class="user_input_err_msg error_for_userid">The userId is not registered contact the admin</span>
+            </label>
+        </form>
+            <label id="log_btns">
+                <button onclick="logiInTeacherBtn()" id="button_1">LogIn</button>
+                <button onclick="logGotToHomeBtn()" id="button_2">Home</button>
+            </label>
+        </section>
+    </div>
+</div>
+        <div class="pop_ups_box">
+            <div class="pop_up_card_1 pops">
+                <div class="header_frame">
+                    <h3>Adding Student</h3>
+                    <h3 onclick="closeStdPopUpBtn()">
+                        <img src="assets/icons/close_1.png">
+                    </h3>
+                </div>
+                <div class="body_frames body_frame">
+                    <div class="body_frame_1">
+                        <div class="pic_img">
+                            <img src="assets/icons/user_dark.png" alt="" id="addStdPhotoSelected">
+                            <label >
+                                <span>Select Image</span>
+                                <input type="file" id="addSelectStdPhoto">
+                            </label>
+                        </div>
+                        <div class="btns">
+                            <button onclick="clrAddStdInputsBtn()">Clear</button>
+                            <button onclick="saveAddStdInputBtn()">Save</button>
+                            <button onclick="saveAddStdInputAndExitBtn()">Save & Exit</button>
+                        </div>
+                    </div>
+                    <div class="body_frame_2 body_frame">
+                        <h3>Student's Details</h3>
+                        <p>
+                            <button onclick="generateStdIdBtn()">Generate ID</button>
+                            <span id="addStdGeneratedStdId">STJD001</span>
+                        </p>
+                        <label >
+                            <span>Firts Name</span>
+                            <input type="text" id="addStdFname" class="adminSTDinput">
+                        </label>
+                        <label >
+                            <span>Middle Name</span>
+                            <input type="text" placeholder="Optional" id="addStdMname" class="adminSTDinput">
+                        </label>
+                        <label >
+                            <span>Last Name</span>
+                            <input type="text" placeholder="" id="addStdLname" class="adminSTDinput">
+                        </label>
+                        <label >
+                            <span>Date of Birth</span>
+                            <input type="date" placeholder="" id="addStdDob" class="adminSTDinput">
+                        </label>
+                        <label >
+                            <span>Gender</span>
+                                <select name="" id="addStdSelectedGender" class="adminSTDinput">
+                                <option value=""></option>
+                                <option value="m">Male</option>
+                                <option value="f">Female</option>
+                            </select>
+                        </label>
+                        <label >
+                            <span>Class</span>
+                            <select name="" id="addStdSelectedClass" class="adminSTDinput">
+                                <option value=""></option>
+                                <option value="1">Senior 1</option>
+                                <option value="2">Senior 2</option>
+                                <option value="3">Senior 3</option>
+                                <option value="4">Senior 5</option>
+                                <option value="5">Senior 5</option>
+                                <option value="6">Senior 6</option>
+                            </select>
+                        </label>
+                        <label >
+                            <span>Admission Date</span>
+                            <input type="date" id="addSelectedEntryDate" class="adminSTDinput">
+                            <select name="" id="addSelectedEntryTerm" class="adminSTDinput">
+                                <option value=""></option>
+                                <option value="1">Term 1</option>
+                                <option value="2">Term 2</option>
+                                <option value="3">Term 3</option>
+                            </select>
+                            <span>Admission Class</span>
+                            <select name="" id="addStdSelectedAdmissionClass" class="adminSTDinput">
+                                <option value=""></option>
+                                <option value="1">Senior 1</option>
+                                <option value="2">Senior 2</option>
+                                <option value="3">Senior 3</option>
+                                <option value="4">Senior 4</option>
+                                <option value="5">Senior 5</option>
+                                <option value="6">Senior 6</option>
+                            </select>
+                        </label>
+                        <label >
+                            <span>Former School</span>
+                            <input type="text" placeholder="" id="addStdFormerSch" class="adminSTDinput">
+                        </label>
+                        <label >
+                            <span>Busary</span>
+                            <select name="" id="addIsBusary" class="adminSTDinput">
+                                <option value="false">False</option>
+                                <option value="true">True</option>
+                            </select>
+                        </label>
+                        <label >
+                            <span>Nationality</span>
+                            <input type="text" id="addStdNationality" class="adminSTDinput">
+                        </label>
+                        <label >
+                            <span>Address</span>
+                            <input type="text" placeholder="District" id="addStdDistrict" class="adminSTDinput">
+                            <input type="text" placeholder="Sub-County" id="addStdSCounty" class="adminSTDinput">
+                        </label>
+                    </div>
+                    <div class="body_frame_3 body_frame">
+                        <h3>Parent's Details</h3>
+                        <label >
+                            <span>First Name</span>
+                            <input type="text" id="addStdPFname" class="adminSTDinput">
+                        </label>
+                        <label >
+                            <span>Last Name</span>
+                            <input type="text" id="addStdPLname" class="adminSTDinput">
+                        </label>
+                        <label >
+                            <span>Relationship</span>
+                            <select name="" id="addStdSelectedPRelative" class="adminSTDinput">
+                                <option value=""></option>
+                                <option value="mother">Mother</option>
+                                <option value="father">Father</option>
+                                <option value="brother">Brother</option>
+                                <option value="sister">Sister</option>
+                                <option value="gmother">Grand Mother</option>
+                                <option value="gfather">Grand Father</option>
+                                <option value="aunt">Aunt</option>
+                                <option value="uncle">Uncle</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </label>
+                        <label >
+                            <span>Phone No.</span>
+                            <input type="text" id="addStdPRelativeContact" class="adminSTDinput">
+                        </label>
+                        <label >
+                            <span>Email Address</span>
+                            <input type="email" placeholder="Optional" id="addStdPRelativeEmail" class="adminSTDinput">
+                        </label>
+                        <h3>Health Info</h3>
+                        <label >
+                            <span>Condition</span>
+                            <input type="text" id="addStdHCondition" class="adminSTDinput">
+                        </label>
+                        <label >
+                            <span>Dr. Name</span>
+                            <input type="text" id="addStdHDrName" class="adminSTDinput">
+                        </label>
+                        <label >
+                            <span>Dr. Contact</span>
+                            <input type="text" id="addStdHDrContact" class="adminSTDinput">
+                        </label>
+                    </div>
+                    <div class="body_frame_4 ">
+                        <h3>Subjects Offered</h3>
+                        <h4>Compulsury</h4>
+                        <label >
+                            <input type="checkbox" value="phy"  class="addStdCSbjctCheck adminSTDinput" id="addStdSPhyCheck">
+                            <span>Physics</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="chem" checked class="addStdCSbjctCheck adminSTDinput" id="addStdSChemCheck">
+                            <span>Chemistry</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="maths" checked class="addStdCSbjctCheck adminSTDinput" id="addStdSMathsCheck">
+                            <span>Mathematics</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="bio" checked class="addStdCSbjctCheck adminSTDinput" id="addStdSBioCheck">
+                            <span>Biology</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="geog" checked class="addStdCSbjctCheck" id="addStdSGeogCheck">
+                            <span>Geography</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="his" checked class="addStdCSbjctCheck adminSTDinput" id="addStdSHisCheck">
+                            <span>History</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="eng" checked class="addStdCSbjctCheck adminSTDinput" id="addStdSEngCheck">
+                            <span>English</span>
+                        </label>
+                        <h4>Optionals</h4>
+                        <label >
+                            <input type="checkbox" value="ict" class="addStdOSbjctCheck adminSTDinput" id="addStdSIctCheck">
+                            <span>ICT</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="ent" class="addStdOSbjctCheck adminSTDinput" id="addStdSEntCheck">
+                            <span>Entreprenuership</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="agric" class="addStdOSbjctCheck adminSTDinput" id="addStdSAgricCheck">
+                            <span>Agriculture</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="art" class="addStdOSbjctCheck adminSTDinput" id="addStdSArtCheck">
+                            <span>Art & Craft</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="td" class="addStdOSbjctCheck adminSTDinput" id="addStdSTdCheck">
+                            <span>T.Drawing</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="pe" class="addStdOSbjctCheck adminSTDinput" id="addStdSPeCheck">
+                            <span>Physica Edu</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="lug" class="addStdOSbjctCheck adminSTDinput" id="addStdSLugCheck">
+                            <span>Luganda</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="kis" class="addStdOSbjctCheck adminSTDinput" id="addStdSKisCheck">
+                            <span>Kiswahili</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="cre" class="addStdOSbjctCheck adminSTDinput" id="addStdSCreCheck">
+                            <span>C.R.E</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="ire" class="addStdOSbjctCheck adminSTDinput" id="addStdSIreCheck">
+                            <span>I.R.E</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="pop_up_card_2 pops">
+                <div class="header_frame">
+                    <h3>Adding Student' Marks</h3>
+                    <h3 onclick="closeStdPopUpBtn()"><img src="assets/icons/close_1.png" alt=""></h3>
+                </div>
+                <div class="body_frames">
+                    <div class="body_frame_1">
+                        <div class="pic_img">
+                            <img src="icons/dash.png" alt="" id="addStdPhotoSelected">
+                            <label>
+                                <span>Select Image</span>
+                                <input type="file" id="addSelectStdMarksPhoto">
+                            </label>
+                        </div>
+                        <div class="btns">
+                            <button onclick="clrAddStdMarksInputsBtn()">Clear</button>
+                            <button onclick="saveAddStdMarksInputBtn()">Save</button>
+                            <button onclick="saveAddStdMarksInputAndExitBtn()">Save & Exit</button>
+                        </div>
+                    </div>
+                    <div class="body_frame_2 body_frame" id="body_frame_2_adminStdMarks">
+                        <h3>Student's Details</h3>
+                        <p>
+                            <button onclick="generateStdMarksIdBtn()">Generate ID</button>
+                            <span id="addStdGeneratedStdMarksId">STJD001</span>
+                        </p>
+                        <label >
+                            <span>Firts Name</span>
+                            <input type="text" id="addStdMarksFname" class="addStdMarksInput">
+                        </label>
+                        <label >
+                            <span>Middle Name</span>
+                            <input type="text" placeholder="Optional" id="addStdMarksMname" class="addStdMarksInput">
+                        </label>
+                        <label >
+                            <span>Last Name</span>
+                            <input type="text" placeholder="" id="addStdMarksLname">
+                        </label>
+                        <label >
+                            <span>Gender</span>
+                            <select name="" id="addStdMarksSelectedGender" class="addStdMarksInput">
+                                <option value=""></option>
+                                <option value="m">Male</option>
+                                <option value="f">Female</option>
+                            </select>
+                        <label >
+                            <span>Class</span>
+                            <select name="" id="addStdMarksSelectedClass" class="addStdMarksInput">
+                                <option value=""></option>
+                                <option value="1">Senior 1</option>
+                                <option value="2">Senior 2</option>
+                                <option value="3">Senior 3</option>
+                                <option value="4">Senior 5</option>
+                                <option value="5">Senior 5</option>
+                                <option value="6">Senior 6</option>
+                            </select>
+                        </label>
+                        
+                    </div>
+                    <div class="body_frame_3 body_frame">
+                        <h3>Compulsory Subjects</h3>
+                        <label >
+                            <span>Physics</span>
+                            <input type="text" id="adminStdMarksPhy1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksPhy2" class="addStdMarksInput">
+                        </label>
+                        <label>
+                            <span>Chemistry</span>
+                            <input type="text" id="adminStdMarksChem1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksChem2" class="addStdMarksInput">
+                        </label>
+                        <label >
+                            <span>Mathematics</span>
+                            <input type="text" id="adminStdMarksMaths1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksMaths2" disabled>
+                        </label>
+                        <label >
+                            <span>Biology</span>
+                            <input type="text" id="adminStdMarksBio1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksBio2" class="addStdMarksInput">
+                        </label>
+                        <label >
+                            <span>English</span>
+                            <input type="text" id="adminStdMarksEng1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksEng2" disabled>
+                        </label>
+                        <label >
+                            <span>Geography</span>
+                            <input type="text" id="adminStdMarksGeog1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksGeog2" disabled>
+                        </label>
+                        <label >
+                            <span>History</span>
+                            <input type="text" id="adminStdMarksHis1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksHis2" disabled>
+                        </label>
+                        
+                    </div>
+                    <div class="body_frame_4 body_frame">
+                        <h3>Optionals</h3>
+                        <label >
+                            <span>ICT</span>
+                            <input type="text" id="adminStdMarksIct1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksIct2" class="addStdMarksInput">
+                        </label>
+                        <label >
+                            <span>Agriculture</span>
+                            <input type="text" id="adminStdMarksAgric1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksAgric2" class="addStdMarksInput">
+                        </label>
+                        <label >
+                            <span>Entreprenuership</span>
+                            <input type="text" id="adminStdMarksEnt1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksEnt2" disabled>
+                        </label>
+                        <label >
+                            <span>Art & Craft</span>
+                            <input type="text" id="adminStdMarksArt1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksArt2" class="addStdMarksInput">
+                        </label>
+                        <label >
+                           <span>T.Drawing</span>
+                            <input type="text" id="adminStdMarksTd1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksTd2" class="addStdMarksInput">
+                        </label>
+                        <label >
+                           <span>Litrature</span>
+                            <input type="text" id="adminStdMarksLit1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksLit2" disabled>
+                        </label>
+                        <label >
+                            <span>P.Education</span>
+                            <input type="text" id="adminStdMarksPe1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksPe2" class="addStdMarksInput">
+                        </label>
+                        <label >
+                            <span>Kiswahili</span>
+                            <input type="text" id="adminStdMarksKis1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksKis2" disabled>
+                        </label>
+                        <label >
+                            <span>Luganda</span>
+                            <input type="text" id="adminStdMarksLug1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksLug2" disabled>
+                        </label>
+                        <label >
+                            <span>C.R.E</span>
+                            <input type="text" id="adminStdMarksCre1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksCre2" disabled>
+                        </label>
+                        <label >
+                            <span>I.R.E</span>
+                            <input type="text" id="adminStdMarksIre1" class="addStdMarksInput">
+                            <input type="text" id="adminStdMarksIre2" disabled>
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="pop_up_card_3 pops">
+                <div class="header_frame">
+                    <h3>Manage Databases</h3>
+                    <h3 onclick="closeStdPopUpBtn()"><img src="assets/icons/close_1.png" alt=""></h3>
+                </div>
+                <div class="body_frames">
+                    <div class="nav_frame">
+                        <button onclick="reloadDataBases()">Reload DBs</button>
+                        <button class="db_btn" onclick="manageTeachersDBsBtn(event)">Teachers</button>
+                        <button class="db_btn" onclick="manageStudentsDBsBtn(event)">Students</button>
+                        <button class="db_btn" onclick="manageMarksDBsBtn(event)">Marks</button>
+                    </div>
+                    
+                    <div class="body_frame_2 bdy_frame" id="body_frame_2">
+                        <div class="body_frame_2_head">
+
+                            <h3>Student's Databases</h3>
+                            
+                            <span>
+                                <select name="" id="copyAdminStdsDetsFrom">
+                                    
+                                </select>
+                                <input type="text" id="createAdminDatabaseYear" placeholder="Database Year">
+                                <button onclick="createNewAdminDetailsDBBtn()">Create</button>
+                            </span>
+                        </div>
+                        <table border>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Name</th>
+                                    <th>Action Btn</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminDetstbdy">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="body_frame_3 bdy_frame" id="body_frame_3">
+                        <div class="body_frame_3_head">
+                            <h3>Marks Databases</h3>
+                            <span>
+                                <select name="" id="selectAvalableAdminDetsDbs">
+                                    
+                                </select>
+                            
+                                <select name="" id="generateMarksDbTerm">
+                                    <option value="1">Term 1</option>
+                                    <option value="2">Term 2</option>
+                                    <option value="3">Term 3</option>
+                                </select>
+                            
+                                <select name="" id="generateMarksDbExam">
+                                    <option value="bot">B.O.T</option>
+                                    <option value="mot">M.O.T</option>
+                                    <option value="eot">E.O.T</option>
+                                </select>
+                            
+                                <button onclick="createNewAdminMarksDBBtn()">Create</button>
+                            </span>
+                        </div>
+                        <table border>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Name</th>
+                                    <th>Term</th>
+                                    <th>Exam</th>
+                                    <th>Action Btn</th>
+                                </tr>
+                            </thead>
+                            <tbody id="marksDetstbdy">
+ 
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    <div class="body_frame_4 bdy_frame" id="body_frame_4">
+                        <div class="body_frame_4_head">
+                            <h3>Teachers DBS</h3>
+                            <span>
+                                <input type="text" name="" id="teachersNavSelectYearDBDets" placeholder="Year">
+                                <button onclick="createNewTeachersDBBtn()">Create</button>
+                            </span>
+                        </div>
+                        <table border>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Name</th>
+                                    <th>Action Btn</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teachersDetstbdy">
+ 
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="pop_up_card_4 pops">
+                <div class="header_frame">
+                    <h3>Updating Fees Payed</h3>
+                    <h3 onclick="closeStdPopUpBtn()"><img src="assets/icons/close_1.png" alt=""></h3>
+                </div>
+                <div class="body_frames">
+                    <div class="body_frame_1">
+                        <div class="pic_img">
+                            <img src="icons/dash.png" alt="" id="addStdPhotoSelected">
+
+                                <h4>ID: <span id="studentsFeesId">ST00</span></h4>
+                                <h4>Name: <span id="studentsFeesName">John Doe</span></h4>
+                            
+                        </div>
+                        <div class="btns">
+                            <button onclick="clrStdPayedFeesInputsBtn()">Clear</button>
+                            <!-- <button onclick="createAminDatabaseBtn()">Save</button> -->
+                            <button onclick="saveStdPayedFeesInputAndExitBtn()">Save & Exit</button>
+                        </div>
+                    </div>
+                    <div class="body_frame_2">
+                        <label>
+                                <span>Fees Payed</span>
+                                <input type="text" id="feesPayedInput" class="feesInputs">
+                            </label>
+                            <label>
+                                <span>Pay Date</span>
+                                <input type="date" id="feesPayDate" class="feesInputs"> 
+                            </label>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <div class="pop_up_card_5 pops">
+                <div class="header_frame">
+                    <h3>Adding Teacher</h3>
+                    <h3 onclick="closeTeacherPopUpBtn()">
+                        <img src="assets/icons/close_1.png" alt="">
+                    </h3>
+                </div>
+                <div class="body_frames">
+                    <div class="body_frame_1 ">
+                        <div class="pic_img">
+                            <img src="assets/icons/user_dark.png" alt="" id="addTeacherPhotoSelected">
+                            <label >
+                                <span>Teacher's Photo</span>
+                                <input type="file" id="addSelectTeacherPhoto">
+                            </label>
+                        </div>
+                        <div class="btns">
+                            <button onclick="clrAddTeacherInputsBtn()">Clear</button>
+                            <button onclick="saveAddTeacherInputBtn()">Save</button>
+                            <button onclick="saveAddTeacherInputAndExitBtn()">Save & Exit</button>
+                        </div>
+                    </div>
+                    <div class="body_frame_2 ">
+                        <h3>Teacher's Details</h3>
+                        <p>
+                            <button onclick="generateTeacherIdBtn()">Generate ID</button>
+                            <span id="addTeacherGeneratedTeacherId">STJD001</span>
+                        </p>
+                        <label >
+                            <span>Firts Name</span>
+                            <input type="text" id="addTeacherFname" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Last Name</span>
+                            <input type="text" placeholder="" id="addTeacherLname" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Date of Birth</span>
+                            <input type="date" placeholder="" id="addTeacherDob" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Gender</span>
+                            <select name="" id="addTeacherSelectedGender" class="addTeacherInputs">
+                                <option value=""></option>
+                                <option value="m">Male</option>
+                                <option value="f">Female</option>
+                            </select>
+                        </label>
+                        <label >
+                            <span>Former School</span>
+                            <input type="text" placeholder="" id="addTeacherFormerSch" class="addTeacherInputs">
+                        </label>
+                        
+                        <label >
+                            <span>Nationality</span>
+                            <input type="text" id="addTeacherNationality" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Address</span>
+                            <input type="text" placeholder="District" id="addTeacherDistrict" class="addTeacherInputs">
+                            <input type="text" placeholder="Sub-County" id="addTeacherSCounty" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Email Address</span>
+                            <input type="text" placeholder="username@gmail.com" id="addTeacherEmail" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Phone Number</span>
+                            <input type="text" placeholder="+2567XXXXXXX" id="addTeacherNumer" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>ID No./NIN</span>
+                            <input type="text" placeholder="CXXXXXXXXXXX" id="addTeacherNIN" class="addTeacherInputs">
+                        </label>
+                        <h3>Health Info</h3>
+                        <label >
+                            <span>Condition</span>
+                            <input type="text" id="addTeacherHCondition" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Dr. Name</span>
+                            <input type="text" id="addTeacherHDrName" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Dr. Contact</span>
+                            <input type="text" id="addTeacherHDrContact" class="addTeacherInputs">
+                        </label>
+                    </div>
+                    <div class="body_frame_3 body_frame">
+                        <h3>Proffion Info</h3>
+                        <label >
+                            <span>Qualification</span>
+                            <select name="" id="addTeacherQfn" class="addTeacherInputs">
+                                <option value="doctrate">PhD</option>
+                                <option value="masters">Masters</option>
+                                <option value="bachlor">Bachlors</option>
+                                <option value="diploma">Diploma</option>
+                                <option value="Cerificate">Cerificate</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <textarea name="" id="addTeacherQfnDesc" class="addTeacherInputs" placeholder="Qualification Description" >
+
+                            </textarea>
+                        </label>
+                        <label >
+                            <span>Years of Exp</span>
+                            <input type="text" id="addTeacherYearsExp" placeholder="Yrs" class="addTeacherInputs">
+                            <input type="text" id="addTeacherMonsExp" placeholder="Mons" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Emp. Type</span>
+                            <select name="" id="addTeacherEmpType" class="addTeacherInputs">
+                                <option value="halftime">Half-Time</option>
+                                <option value="fulltime">Full-Time</option>
+                                <option value="other">other</option>
+                            </select>
+                        </label>
+                        <label >
+                            <span>Emp. Category</span>
+                            <select name="" id="addTeacherEmpCategory" class="addTeacherInputs">
+                                <option value="classteacher">Clas Teacher</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </label>
+                        <label >
+                            <span>Emp. Date</span>
+                            <input type="date" name="" id="addTeacherEmpDate" class="addTeacherInputs">
+                        </label>
+                        <h3>Payroll Info</h3>
+                        <label >
+                            <span>Salary</span>
+                            <input type="text" id="addTeacherSalary" class="addTeacherInputs"> 
+                        </label>
+                        <label >
+                            <span>Allowances</span>
+                            <input type="text" id="addTeacherAlc" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Bank Name</span>
+                            <input type="text" id="addTeacherBankName" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Acc. Number</span>
+                            <input type="text" id="addTeacherBankAccNo" class="addTeacherInputs">
+                        </label>
+                        <h3>System Info</h3>
+                        <label >
+                            <span>Username</span>
+                            <input type="text" id="addTeacherLUsername" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Login Password</span>
+                            <input type="text" id="addTeacherLPassword" class="addTeacherInputs">
+                        </label>
+                        <label >
+                            <span>Roll</span>
+                            <select name="" id="addTeacherRoll" class="addTeacherInputs">
+                                <option value="">Role</option>
+                                <option value="teacher">Teachers</option>
+                                <option value="admin">Admin</option>
+                                <option value="bursar">Bursar</option>
+                                <option value="librarian">Libralian</option>
+                            </select>
+                        </label>
+                        
+                        
+                    </div>
+                    <div class="body_frame_4 ">
+                        <h3>Subjects Able to Teacher</h3>
+                        <label >
+                            <input type="checkbox" value="phy"  class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSPhyCheck">
+                            <span>Physics</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="chem"  class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSChemCheck">
+                            <span>Chemistry</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="maths"  class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSMathsCheck">
+                            <span>Mathematics</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="bio"  class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSBioCheck">
+                            <span>Biology</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="geog"  class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSGeogCheck">
+                            <span>Geography</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="his"  class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSHisCheck">
+                            <span>History</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="eng"  class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSEngCheck">
+                            <span>English</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="ict" class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSIctCheck">
+                            <span>ICT</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="ent" class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSEntCheck">
+                            <span>Entreprenuership</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="agric" class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSAgricCheck">
+                            <span>Agriculture</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="art" class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSArtCheck">
+                            <span>Art & Craft</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="td" class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherTeacherCheck">
+                            <span>T.Drawing</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="pe" class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSPeCheck">
+                            <span>Physica Edu</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="lug" class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSLugCheck">
+                            <span>Luganda</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="kis" class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSKisCheck">
+                            <span>Kiswahili</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="cre" class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSCreCheck">
+                            <span>C.R.E</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="ire" class="addTeacherAbleSbjctCheck addTeacherInputs" id="addTeacherSIreCheck">
+                            <span>I.R.E</span>
+                        </label>
+                        <h4>Subjects Assigned</h4>
+                        <label >
+                            <input type="checkbox" value="phy"  class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSPhyCheck">
+                            <span>Physics</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="chem"  class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSChemCheck">
+                            <span>Chemistry</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="maths"  class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSMathsCheck">
+                            <span>Mathematics</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="bio"  class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSBioCheck">
+                            <span>Biology</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="geog"  class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSGeogCheck">
+                            <span>Geography</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="his"  class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSHisCheck">
+                            <span>History</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="eng"  class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSEngCheck">
+                            <span>English</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="ict" class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSIctCheck">
+                            <span>ICT</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="ent" class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSEntCheck">
+                            <span>Entreprenuership</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="agric" class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSAgricCheck">
+                            <span>Agriculture</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="art" class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSArtCheck">
+                            <span>Art & Craft</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="td" class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherTeacherCheck">
+                            <span>T.Drawing</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="pe" class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSPeCheck">
+                            <span>Physica Edu</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="lug" class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSLugCheck">
+                            <span>Luganda</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="kis" class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSKisCheck">
+                            <span>Kiswahili</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="cre" class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSCreCheck">
+                            <span>C.R.E</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="ire" class="addTeacherAsignedSbjctCheck addTeacherInputs" id="addTeacherSIreCheck">
+                            <span>I.R.E</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pop_up_card_3 pops">
+                <div class="header_frame">
+                    <h3>Manage Databases</h3>
+                    <h3 onclick="closeStdPopUpBtn()"><img src="assets/icons/close_1.png" alt=""></h3>
+                </div>
+                <div class="body_frames">
+                    <div class="nav_frame">
+                        <button onclick="reloadDataBases()">Reload DBs</button>
+                        <button class="db_btn" onclick="manageTeachersDBsBtn(event)">Teachers</button>
+                        <button class="db_btn" onclick="manageStudentsDBsBtn(event)">Students</button>
+                        <button class="db_btn" onclick="manageMarksDBsBtn(event)">Marks</button>
+                    </div>
+                    
+                    <div class="body_frame_2 bdy_frame" id="body_frame_2">
+                        <div class="body_frame_2_head">
+
+                            <h3>Student's Databases</h3>
+                            
+                            <span>
+                                <select name="" id="copyAdminStdsDetsFrom">
+                                    
+                                </select>
+                                <input type="text" id="createAdminDatabaseYear" placeholder="Database Year">
+                                <button onclick="createNewAdminDetailsDBBtn()">Create</button>
+                            </span>
+                        </div>
+                        <table border>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Name</th>
+                                    <th>Action Btn</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminDetstbdy">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="body_frame_3 bdy_frame" id="body_frame_3">
+                        <div class="body_frame_3_head">
+                            <h3>Marks Databases</h3>
+                            <span>
+                                <select name="" id="selectAvalableAdminDetsDbs">
+                                    
+                                </select>
+                            
+                                <select name="" id="generateMarksDbTerm">
+                                    <option value="1">Term 1</option>
+                                    <option value="2">Term 2</option>
+                                    <option value="3">Term 3</option>
+                                </select>
+                            
+                                <select name="" id="generateMarksDbExam">
+                                    <option value="bot">B.O.T</option>
+                                    <option value="mot">M.O.T</option>
+                                    <option value="eot">E.O.T</option>
+                                </select>
+                            
+                                <button onclick="createNewAdminMarksDBBtn()">Create</button>
+                            </span>
+                        </div>
+                        <table border>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Name</th>
+                                    <th>Term</th>
+                                    <th>Exam</th>
+                                    <th>Action Btn</th>
+                                </tr>
+                            </thead>
+                            <tbody id="marksDetstbdy">
+ 
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    <div class="body_frame_4 bdy_frame" id="body_frame_4">
+                        <div class="body_frame_4_head">
+                            <h3>Teachers DBS</h3>
+                            <span>
+                                <input type="text" name="" id="teachersNavSelectYearDBDets" placeholder="Year">
+                                <button onclick="createNewTeachersDBBtn()">Create</button>
+                            </span>
+                        </div>
+                        <table border>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Name</th>
+                                    <th>Action Btn</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teachersDetstbdy">
+ 
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="pop_up_card_6 pops">
+                <div class="header_frame">
+                    <h3>Creating Event</h3>
+                    <h3 onclick="closeStdPopUpBtn()">
+                        <img src="assets/icons/close_1.png">
+                    </h3>
+                </div>
+                <div class="body_frames body_frame">
+                    <div class="body_frame_1">
+                        <div class="sets">
+                            <label >
+                                <span>Event Expense</span>
+                                <span><input type="number" id="eventExpense_input"></span>
+                            </label>
+                            <label >
+                                <span>Date Of Creation</span>
+                                <span>
+                                    <input type="date" id="eventCDate_input">
+                                    <select id="eventCTerm_input">
+                                        <option value="">Term</option>
+                                        <option value="term_1">Term I</option>
+                                        <option value="term_2">Term 2</option>
+                                        <option value="term_3">Term 3</option>
+                                    </select>
+                                </span>
+                            </label>
+                            <label >
+                                <span>Do Date</span>
+                                <span><input type="date" id="eventDoDate_input"></span>
+                            </label>
+                        </div>
+                        <div class="btns">
+                            <button onclick="clrCreateEventInputsBtn()">Clear</button>
+                            <button onclick="saveCreateEventInputBtn()">Save</button>
+                            <button onclick="saveCreateEventInputAndExitBtn()">Save & Exit</button>
+                        </div>
+                    </div>
+                    <div class="body_frame_2 body_frame">
+                        <div class="title_input">
+                            <h3>Event Title</h3>
+                            <input type="text" name="" id="eventTitle_input" class="eventInputs">
+                        </div>
+                        <div class="body_input">
+                            <h3>Event Description</h3>
+                            <textarea name="" id="eventDesc_input" cols="90" rows="15" class="eventInputs"></textarea>
+                        </div>
+                    </div>
+                        <h3>Parent's Details</h3>
+                        <label >
+                            <span>First Name</span>
+                            <input type="text" id="addStdPFname">
+                        </label>
+                        <label >
+                            <span>Last Name</span>
+                            <input type="text" id="addStdPLname">
+                        </label>
+                        <label >
+                            <span>Relationship</span>
+                            <select name="" id="addStdSelectedPRelative">
+                                <option value=""></option>
+                                <option value="mother">Mother</option>
+                                <option value="father">Father</option>
+                                <option value="brother">Brother</option>
+                                <option value="sister">Sister</option>
+                                <option value="gmother">Grand Mother</option>
+                                <option value="gfather">Grand Father</option>
+                                <option value="aunt">Aunt</option>
+                                <option value="uncle">Uncle</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </label>
+                        <label >
+                            <span>Phone No.</span>
+                            <input type="text" id="addStdPRelativeContact">
+                        </label>
+                        <label >
+                            <span>Email Address</span>
+                            <input type="email" placeholder="Optional" id="addStdPRelativeEmail">
+                        </label>
+                        <h3>Health Info</h3>
+                        <label >
+                            <span>Condition</span>
+                            <input type="text" id="addStdHCondition">
+                        </label>
+                        <label >
+                            <span>Dr. Name</span>
+                            <input type="text" id="addStdHDrName">
+                        </label>
+                        <label >
+                            <span>Dr. Contact</span>
+                            <input type="text" id="addStdHDrContact">
+                        </label>
+                    </div>
+                    <div class="body_frame_4 ">
+                        <h3>Subjects Offered</h3>
+                        <h4>Compulsury</h4>
+                        <label >
+                            <input type="checkbox" value="phy"  class="addStdCSbjctCheck" id="addStdSPhyCheck">
+                            <span>Physics</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="chem" checked class="addStdCSbjctCheck" id="addStdSChemCheck">
+                            <span>Chemistry</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="maths" checked class="addStdCSbjctCheck" id="addStdSMathsCheck">
+                            <span>Mathematics</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="bio" checked class="addStdCSbjctCheck" id="addStdSBioCheck">
+                            <span>Biology</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="geog" checked class="addStdCSbjctCheck" id="addStdSGeogCheck">
+                            <span>Geography</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="his" checked class="addStdCSbjctCheck" id="addStdSHisCheck">
+                            <span>History</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="eng" checked class="addStdCSbjctCheck" id="addStdSEngCheck">
+                            <span>English</span>
+                        </label>
+                        <h4>Optionals</h4>
+                        <label >
+                            <input type="checkbox" value="ict" class="addStdOSbjctCheck" id="addStdSIctCheck">
+                            <span>ICT</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="ent" class="addStdOSbjctCheck" id="addStdSEntCheck">
+                            <span>Entreprenuership</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="agric" class="addStdOSbjctCheck" id="addStdSAgricCheck">
+                            <span>Agriculture</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="art" class="addStdOSbjctCheck" id="addStdSArtCheck">
+                            <span>Art & Craft</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="td" class="addStdOSbjctCheck" id="addStdSTdCheck">
+                            <span>T.Drawing</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="pe" class="addStdOSbjctCheck" id="addStdSPeCheck">
+                            <span>Physica Edu</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="lug" class="addStdOSbjctCheck" id="addStdSLugCheck">
+                            <span>Luganda</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="kis" class="addStdOSbjctCheck" id="addStdSKisCheck">
+                            <span>Kiswahili</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="cre" class="addStdOSbjctCheck" id="addStdSCreCheck">
+                            <span>C.R.E</span>
+                        </label>
+                        <label >
+                            <input type="checkbox" value="ire" class="addStdOSbjctCheck" id="addStdSIreCheck">
+                            <span>I.R.E</span>
+                        </label>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="settings_pop_ups_box">
+            <div class="pop_up_1 settings_pops">
+                <div class="pop_up_1_box all_settings_pop">
+                    <div class="pop_up_head">
+                        <p>Change Name</p>
+                        <img src="assets/icons/close_1.png" alt="" onclick="closesettings_pop_ups_box()">
+                    </div>
+                    <div class="pop_up_body">
+                        <div class="pop_up_body_content">
+                            <input type="text" placeholder="School Name" id="sch_name_input">
+                            <button onclick="saveSettingsFuncBtn('sch_name')">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pop_up_2 settings_pops">
+                <div class="pop_up_2_box all_settings_pop" >
+                    <div class="pop_up_head">
+                        <p>Change School Badge</p>
+                        <img src="assets/icons/close_1.png" alt="" onclick="closesettings_pop_ups_box()">
+                    </div>
+                    <div class="pop_up_body">
+                        <div class="pop_up_body_content">
+                            <img src="icons/badge.png" id="sch_badge_pic">
+                            <label>
+                                <span >Change</span>    
+                                <input type="file" id="sch_badge_input">
+                            </label>
+                            <button onclick="saveSettingsFuncBtn('sch_badge')" id="save_badge_uri_btn" disabled>Save Changes</button>
+                            <span class="badge_warning_txt"><i>Please first Select an image! </i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pop_up_3 settings_pops">
+                <div class="pop_up_3_box all_settings_pop">
+                    <div class="pop_up_head">
+                        <p>Change Motor</p>
+                        <img src="assets/icons/close_1.png" alt="" onclick="closesettings_pop_ups_box()">
+                    </div>
+                    <div class="pop_up_body">
+                        <div class="pop_up_body_content">
+                            <input type="text" placeholder="School Motor" id="sch_motor_input">
+                            <button onclick="saveSettingsFuncBtn('sch_motor')">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pop_up_4 settings_pops">
+                <div class="pop_up_4_box all_settings_pop">
+                    <div class="pop_up_head">
+                        <p>Change Fees</p>
+                        <img src="assets/icons/close_1.png" alt="" onclick="closesettings_pop_ups_box()">
+                    </div>
+                    <div class="pop_up_body">
+                        <div class="pop_up_body_content">
+                            <div class="classes">
+                                <div class="fisrt">
+                                    <label>
+                                        <select name="" id="copyAdminStdsDetsFromForFees">
+                                    
+                                </select>
+                                    </label>
+                                    <label>
+                                        <span>Senior 1</span>
+                                        <input type="text" id="feesForSenior_1">
+                                    </label>
+                                    <label>
+                                        <span>Senior 2</span>
+                                        <input type="text" id="feesForSenior_2">
+                                    </label>
+                                    <label>
+                                        <span>Senior 3</span>
+                                        <input type="text" id="feesForSenior_3">
+                                    </label>
+                                </div>
+                                <div class="last">
+                                    <label>
+                                        <span>Senior 4</span>
+                                        <input type="text" id="feesForSenior_4">
+                                    </label>
+                                    <label>
+                                        <span>Senior 5</span>
+                                        <input type="text" id="feesForSenior_5">
+                                    </label>
+                                    <label>
+                                        <span>Senior 6</span>
+                                        <input type="text" id="feesForSenior_6">
+                                    </label>
+                                </div>
+                            </div>
+                            <button onclick="changeFeesSaveBtn()">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="bursar.js"></script>
+</body>
+</html>

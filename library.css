@@ -1,0 +1,10 @@
+.second_div {
+    display: none;
+}
+#view_password_icon {
+    width: 20px;
+    position: relative;
+    bottom: 27px;
+    left: 235px;
+    cursor: pointer;
+}
